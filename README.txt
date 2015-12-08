@@ -1,4 +1,4 @@
-ÆäÖĞÊ¹ÓÃµÄÊı¾İ¿âÊÇ
+å…¶ä¸­ä½¿ç”¨çš„æ•°æ®åº“æ˜¯
 create database day14;
 use day14;
 create table user(
