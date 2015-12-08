@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+    <filter>
+		<description>全站乱码过滤器</description>
+    	<filter-name>encodeFilter</filter-name>
+    	<filter-class>com.itheima.filter.EncodingFilter</filter-class>
+    	<init-param>
+    		<param-name>encode</param-name>
+    		<param-value>utf-8</param-value>
+    	</init-param>
+    </filter>
+    <filter-mapping>
+    	<filter-name>encodeFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+		<description>自动登陆过滤器</description>
+    	<filter-name>AutologinFilter</filter-name>
+    	<filter-class>com.itheima.filter.AutologinFilter</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>AutologinFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.itheima.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.itheima.web.LogoutServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/servlet/LogoutServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>
